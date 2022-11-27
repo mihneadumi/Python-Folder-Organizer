@@ -1,6 +1,6 @@
 """
 Run this to start the app
 """
-import PrepareFile
+from Modules import PrepareFile
 
-print(PrepareFile.select_folder())
+PrepareFile.make_folders()

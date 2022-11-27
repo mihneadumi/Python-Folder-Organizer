@@ -1,8 +1,7 @@
 import os
 # from tkinter import Tk
+import sys
 from tkinter.filedialog import askdirectory
-
-path = ''
 
 
 class File:  # Makes my life easier and the code cleaner
@@ -20,10 +19,17 @@ def create_folder(name: str, path: str):
 
 def make_folders():
     path = askdirectory(title='Select Folder to be organised')  # Shows OS dialog box and return the path (poate pusca pe MacOS)
+    if path == '':
+        print("No folder selected...\nExiting...")
+        sys.exit()
     folder_dict = check_folders(path)
     for folder in folder_dict.keys():
         if folder_dict[folder] == False:
+            print(f"Missing {folder} folder!")
             create_folder(folder, path)
+            print(f"Created {folder} folder.")
+
+    print("\033[92mAll required folders are present!") # Used ANSI Escape sequence to make text green
 
 
 def check_folders(path):
@@ -35,6 +41,3 @@ def check_folders(path):
                 folder_dict[selected_file.filename] = True
 
     return folder_dict
-
-
-make_folders()
