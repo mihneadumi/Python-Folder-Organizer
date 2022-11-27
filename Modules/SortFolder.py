@@ -28,7 +28,7 @@ def get_folder(extension: str):
         return '/Other'
 
 def sort_files(root: str):
-    #pathbun = path+'/'+path1
+    print('\033[93mMoving files...\033[0m')
     for file_str in os.listdir(root):
         file = File(file_str, root)
         if file.extension: # Skips folders bcs they have no extension
@@ -38,3 +38,5 @@ def sort_files(root: str):
             except TypeError as te:
 
                 print (f'{file.filename} could not be moved!')
+
+    print("\033[92mDirectory succesfully organized!\033[0m")
