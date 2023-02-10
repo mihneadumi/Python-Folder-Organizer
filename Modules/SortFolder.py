@@ -24,6 +24,8 @@ def get_folder(extension: str):
         return '/Apps'
     elif extension in zip_extensions:
         return '/Zips'
+    elif extension in mus_extensions:
+        return '/Music'
     else:
         return '/Other'
 
