@@ -44,3 +44,13 @@ def check_folders(path):
                 folder_dict[selected_file.filename] = True
 
     return folder_dict
+
+def delete_empty_folders(path: str):
+    for dirname in os.listdir(path):
+        selected_file = File(dirname, path)
+        if selected_file.extension == '':  # Folders have no extension
+            if len(os.listdir(selected_file.path)) == 0: # Checks if folder is empty
+                os.rmdir(selected_file.path)
+                print(f"Deleted {selected_file.filename} folder.")
+
+    print("\033[92mAll empty folders deleted!\033[0m")
