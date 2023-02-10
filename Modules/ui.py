@@ -50,6 +50,6 @@ class UI:
                 else:
                     print('No folder selected!')
             elif option == '0':
-                break
+                exit()
             else:
                 print('Invalid option!')

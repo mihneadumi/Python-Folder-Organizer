@@ -38,7 +38,6 @@ def sort_files(root: str):
                 dest = file.root + get_folder(file.extension)
                 shutil.move(file.path, dest)
             except TypeError as te:
-
                 print (f'{file.filename} could not be moved!')
 
     print("\033[92mDirectory succesfully organized!\033[0m")
