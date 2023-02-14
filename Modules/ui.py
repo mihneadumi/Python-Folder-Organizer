@@ -1,8 +1,8 @@
 import os
 from tkinter.filedialog import askdirectory
 import tkinter as tk
-import PrepareFile
-import SortFolder
+from Modules import PrepareFile
+from Modules import SortFolder
 
 class UI:
 
