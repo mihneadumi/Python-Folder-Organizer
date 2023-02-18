@@ -8,7 +8,6 @@ class PrintRedirector:
     def __init__(self, text_widget):
         self.text_widget = text_widget
 
-    def write(self, string):
-        """Append string to the text widget"""
-        self.text_widget.insert(tk.END, string)
+    def write(self, cmd):
+        self.text_widget.insert(tk.END, cmd)
         self.text_widget.see(tk.END) # Scroll to the end of the console log

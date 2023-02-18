@@ -2,12 +2,15 @@ import sys
 import tkinter as tk
 from tkinter.filedialog import askdirectory
 from tkinter.scrolledtext import ScrolledText
+
+import colorama
+
 from Modules import PrepareFile, SortFolder, Print_Redirector
 
 def GUI():
     root = tk.Tk()
     root.title("Folder Organizer")
-    root.geometry("505x505")
+    root.geometry("505x370")
     root.resizable(False, False)
     root.configure(bg="white", padx=10, pady=10, relief="flat", borderwidth=5, cursor="arrow", takefocus=True)
 
@@ -40,9 +43,10 @@ def GUI():
     sort_and_delete_button.grid(row=3, column=0, columnspan=3, pady=5, ipady=10, sticky="nsew")
 
     console = ScrolledText(root, height=10, width=50, wrap=tk.WORD)
-    console.configure(background="white", relief="solid", borderwidth=1, cursor="arrow")
+    console.configure(background="white", relief="solid", borderwidth=1, cursor="arrow", font=("Arial", 8))
     console.grid(row=4, column=0, columnspan=3, pady=5, sticky="nsew")
 
+    colorama.init()
     sys.stdout = Print_Redirector.PrintRedirector(console)
     # sys.stderr = Print_Redirector.PrintRedirector(console)
 
