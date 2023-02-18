@@ -6,4 +6,4 @@ from Modules import proper_GUI
 
 if __name__ == '__main__':
     # ui.UI().start_app()
-    proper_GUI.GUI().add_elems()
+    proper_GUI.GUI().start_app()
