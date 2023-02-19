@@ -10,7 +10,7 @@ from Modules import PrepareFile, SortFolder, Print_Redirector
 def GUI():
     root = tk.Tk()
     root.title("Folder Organizer")
-    root.geometry("505x370")
+    root.geometry("505x350")
     root.resizable(False, False)
     root.configure(bg="white", padx=10, pady=10, relief="flat", borderwidth=5, cursor="arrow", takefocus=True)
 
